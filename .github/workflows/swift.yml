@@ -1,3 +1,6 @@
+# This workflow will build a Swift project
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-swift
+
 name: Swift
 
 on:
@@ -7,11 +10,10 @@ on:
     branches: [ "main" ]
 
 jobs:
-  linux:
-    runs-on: ${{ matrix.runner_label }}
-    strategy:
-      matrix:
-        runner_label: ["self-hosted", "Linux", "Arm64", "x86"]
+  build:
+
+    runs-on: ["self-hosted", "Linux"]
+
     steps:
     - uses: actions/checkout@v3
     - name: Build
