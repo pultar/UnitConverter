@@ -10,9 +10,8 @@ on:
     branches: [ "main" ]
 
 jobs:
-  build:
-  
-    runs-on: ["self-hosted", "Linux", "ARM", "ARM64"]
+  linux:
+    runs-on: [ self-hosted, "ARM" ]
 
     steps:
     - uses: actions/checkout@v3
