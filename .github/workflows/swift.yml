@@ -10,8 +10,12 @@ on:
     branches: [ "main" ]
 
 jobs:
-  linux:
-    runs-on: [ self-hosted, "ARM" ]
+  windows-build:
+    runs-on: [ self-hosted, "${{ matrix.os }}", "${{ matrix.architecture }}" ]
+    strategy:
+      matrix:
+        os: ["Windows"]
+        architecture: ["Arm64"]
 
     steps:
     - uses: actions/checkout@v3
